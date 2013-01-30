@@ -1,5 +1,6 @@
 # General
 
+Basic application commands/information. No authentication required.
 
 ## Ping
 Ping the API server to see if alive and well. 
