@@ -27,7 +27,8 @@ Content-Type: application/json; charset=utf-8
     "id": "eus/mcconnell",
     "name": "McConnell",
     "organization": "EUS",
-    "access_mode": "invite"
+    "access_mode": "invite",
+    "status": "warning"
   }
 ]
 ```
@@ -40,12 +41,14 @@ Content-Type: application/json; charset=utf-8
   - `invite`: This location can only be accessed via invite
 - `status`: Current status of location
   - `online`: Client at location is connected and running without problem
-  - `warning": Client at location is connected but has encountered problem(s)
+  - `warning`: Client at location is connected but has encountered problem(s)
   - `offline`: Client at location is not connected to ten server
 
 
 ## Get Location
 Get information for a specific location. Returned object includes slides for the location.
+
+Slides will contain relevant information for displaying on client.
 
 ```
 GET /locations/:organization/:location
@@ -71,7 +74,8 @@ Content-Type: application/json; charset=utf-8
     {
       "_id": ""
       "url": ""
-    }
+    },
+    ...
   ]
 }
 ```
