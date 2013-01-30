@@ -14,7 +14,7 @@ GET /locations
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ```
-```javascript
+```json
 [
   {
     "id": "eus/trottier",
@@ -59,7 +59,7 @@ GET /locations/:organization/:location
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ```
-```javascript
+```json
 {
   "id": "eus/trottier",
   "name": "Trottier",
@@ -78,4 +78,18 @@ Content-Type: application/json; charset=utf-8
     // ...
   ]
 }
+```
+
+
+## Create a Location
+
+```
+POST /locations/:organization
+```
+
+
+## Update a Location
+
+```
+PUT /locations/:organization/:location
 ```

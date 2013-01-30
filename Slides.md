@@ -4,13 +4,13 @@ Slides are individual images/videos to be displayed at a location. A single slid
 
 There are different slide types and priorities.
 
-The different slide types and respective submission guidelines:
+
+#### Slide types and respective submission guidelines:
 - image
   - Minimum Dimensions: 1920px by 1080px
   - Format: JPG, PNG
 - video
   - Minimum Resolution: 720p
-  - Minimum Bitrate: 2000 bps
   - Format: FLV, MP4
 - text
   - 300 characters
@@ -18,14 +18,19 @@ The different slide types and respective submission guidelines:
   - Responsive
   - Viewable area within resolution dimensions of 1920px by 1080px
 
-Status of slides:
--
+#### Status of slides:
+- `submitted` We have recieved your submission and will be reviewing it
+- `rejected` Submission did not meet requirements. Please read slide comments
+- `online` Slide is being displayed at designated locations
+- `offline` Slide is not displayed on any monitors
+- `expired` Slide approved online duration has expired
+- `draft` Saved slides which have not yet been submitted for approval
 
 ## Get Slide
 Retrieve information on a individual slide
 
 ```
-GET /slides/:id
+GET /slides/:organization
 ```
 
 ### Response
@@ -33,9 +38,9 @@ GET /slides/:id
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ```
-```
+```json
 {
-  "_id": "50efe203eb86e1dcfb000001"
+  "_id": "50efe203eb86e1dcfb000001",
   "location": "eus/trottier",
   "title": "Startup Weekend Event",
   "description": "Startup event for Engineers!",
@@ -56,7 +61,22 @@ Content-Type: application/json; charset=utf-8
   - `image`: Image should follow guidelines specified above
   - `video`:  Video should follow guidelines specified above
   - `text`: Plain text should follow guidelines specified above
-  - `webpages`: Page should follow guidelines specified above
+  - `webpage`: Page should follow guidelines specified above
 - `url`: Public URL location of slide or custom URL specified by owner of slide
 - `asset_data`: URL for type *image* or *video*. Plain text for type *text*
 - `status`: Status of slide
+
+
+
+## Create a Slide
+
+```
+POST /slides/:organization/slides
+```
+
+
+## Delete Slide
+
+```
+DELETE /slides/:organization/slides/:id
+```
