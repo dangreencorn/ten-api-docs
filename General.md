@@ -1,5 +1,9 @@
 # General
 
+
+## Ping
+Ping the API server to see if alive and well. 
+
 ```
 GET /ping
 ```
